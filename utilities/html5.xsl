@@ -27,26 +27,13 @@
 			
 			<link rel="shortcut icon" href="/favicon.ico" />
 			<link rel="icon" type="images/png" href="{$workspace}/assets/images/favicon.png" />
-			<link rel="stylesheet" media="screen" href="{$workspace}/css/bootstrap.min.css" />
-			<link rel="stylesheet" media="screen" href="{$workspace}/css/bootstrap-responsive.min.css" />
 			<link rel="stylesheet" media="screen" href="{$workspace}/css/hsa.css" />
 
 			<script type="text/javascript" src="//use.typekit.net/ltj3bef.js"></script>
 			<script type="text/javascript">try{Typekit.load();}catch(e){}</script>
 
 			<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js"></script>
-			<script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.8.16/jquery-ui.min.js"></script>
-			<script src="{$workspace}/js/bootstrap.min.js"></script>
-			<script src="{$workspace}/js/jquery.isotope.min.js"></script>
-			<script src="{$workspace}/js/onmediaquery.min.js"></script>
-			<script src="{$workspace}/js/mqchange.js"></script>
-			<script src="{$workspace}/js/cyclelite.js"></script>
-			<script src="{$workspace}/js/jquery.animate-shadow.min.js"></script>
-			<script src="{$workspace}/js/hsa.js"></script>
-			<xsl:if test="$current-page-id = 1">
-				<script src="{$workspace}/js/jquery.arctext.js"></script>
-			</xsl:if>
-			
+			<script src="{$workspace}/js/master-ck.js"></script>
 			
 			<xsl:comment><![CDATA[[if lt IE 9]><script type="text/javascript" src="]]><xsl:value-of select="$root"/><![CDATA[/workspace/js/html5shiv.min.js"></script><![endif]]]></xsl:comment>
 			<xsl:comment><![CDATA[[if (gte IE 6)&(lte IE 8)]><script type="text/javascript" src="]]><xsl:value-of select="$root"/><![CDATA[/workspace/js/selectivizr.min.js"></script><![endif]]]></xsl:comment>
