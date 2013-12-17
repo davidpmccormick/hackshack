@@ -35,7 +35,12 @@ h2{font-size:20px;line-height:22px;margin-bottom:1em;margin-top:1em;text-shadow:
 h3{font-size:18px;line-height:20px;margin-bottom:1em;margin-top:.7em;text-shadow:0 0 20px rgba(255,255,255,0.5)}
 a{color:#eee;text-shadow:1px 1px 0 rgba(30,30,30,0.2);-webkit-transition:color .3s ease;-moz-transition:color .3s ease;-ms-transition:color .3s ease;-o-transition:color .3s ease}
 a:hover{color:#fbec5d;text-decoration:none}
+.nav-tabs>li>a:hover{border-color:transparent;background-color:#114850}
 .active,li.active a{color:#fbec5d;text-shadow:0 0 5px rgba(255,255,255,0.5)}
+.active.tab-pane{color:inherit}
+.nav-tabs{border-bottom:1px solid #0b3c45}
+.nav-tabs>li>a,.nav-tabs>li>a>h2{text-shadow:none !important;margin:10px 1px 0 0;padding-top:0;padding-bottom:5px;border-radius:10px 10px 0 0}
+.nav-tabs>.active>a,.nav-tabs>.active>a:hover{color:#555;cursor:default;background-color:#0b3c45;border:1px solid transparent;border-bottom-color:transparent}
 ul.liststylenone{list-style:none;margin:0;padding:0}
 ul.horizontal li{float:left;margin-right:10px;font-weight:900}
 ul.horizontal li.taglink{font-size:16px}

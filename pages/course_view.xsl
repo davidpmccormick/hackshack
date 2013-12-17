@@ -38,33 +38,62 @@
 
 <xsl:template match="recipe/entry">
 
-	<div class="span3">
-		<h2 class="visible-phone"><xsl:value-of select="title" /></h2>
-		<h2>Ingredients</h2>
-		<ul class="liststylenone ingredientslist" style="margin-bottom:20px;">
-			<xsl:apply-templates select="ingredients/item" />
+	<div class="visible-phone">
+
+		<ul class="nav nav-tabs">
+		  <li><a href="#ingredients" data-toggle="tab"><h2>Ingredients</h2></a></li>
+		  <li><a href="#method" data-toggle="tab"><h2>Method</h2></a></li>
 		</ul>
-	</div>
-	
-	
-	<div class="span6">
-		<h2 class="hidden-phone"><xsl:value-of select="title" /></h2>
-		<xsl:if test="main-images/item !=''">
-			<div class="cyclewrapper clearfix">
-				<div class="cyclethis">
-					<xsl:apply-templates select="main-images/item" />
+		<div class="tab-content">
+		  <div class="tab-pane active" id="ingredients">
+				<div class="span3">
+					<h2 class="visible-phone"><xsl:value-of select="title" /></h2>
+					<ul class="liststylenone ingredientslist" style="margin-bottom:20px;">
+						<xsl:apply-templates select="ingredients/item" />
+					</ul>
 				</div>
-			</div>
-		</xsl:if>
-		<xsl:if test="method != ''">
-			<h2>Method</h2>
-			<xsl:copy-of select="method/node()" />
-		</xsl:if>
-		<xsl:if test="/data/events/login-info/@logged-in = 'true'">
-			<a class="editbutton" href="{$root}/symphony/publish/recipes/edit/{/data/recipe/entry/@id}">edit</a>
-		</xsl:if>
+		  </div>
+		  <div class="tab-pane" id="method">
+				<div class="span3">
+					<xsl:if test="method != ''">
+						<h2>Method</h2>
+						<xsl:copy-of select="method/node()" />
+					</xsl:if>
+				</div>
+		  </div>
+		</div>
+
 	</div>
-	
+
+	<div class="hidden-phone">
+		<div class="span3">
+			<h2 class="visible-phone"><xsl:value-of select="title" /></h2>
+			<h2>Ingredients</h2>
+			<ul class="liststylenone ingredientslist" style="margin-bottom:20px;">
+				<xsl:apply-templates select="ingredients/item" />
+			</ul>
+		</div>
+
+
+		<div class="span6">
+			<h2 class="hidden-phone"><xsl:value-of select="title" /></h2>
+			<xsl:if test="main-images/item !=''">
+				<div class="cyclewrapper clearfix">
+					<div class="cyclethis">
+						<xsl:apply-templates select="main-images/item" />
+					</div>
+				</div>
+			</xsl:if>
+			<xsl:if test="method != ''">
+				<h2>Method</h2>
+				<xsl:copy-of select="method/node()" />
+			</xsl:if>
+			<xsl:if test="/data/events/login-info/@logged-in = 'true'">
+				<a class="editbutton" href="{$root}/symphony/publish/recipes/edit/{/data/recipe/entry/@id}">edit</a>
+			</xsl:if>
+		</div>
+	</div>
+
 	<xsl:if test="cost != '' or serves != '' or prep-time != '' or cook-time != '' or goes-with != '' or tags != ''">
 		<div class="span3">
 			<div class="rightcol clearfix">
@@ -96,7 +125,7 @@
 				</xsl:choose>
 			</xsl:if>
 			<xsl:if test="cook-time != ''">
-				<h3>Cooking time</h3> 
+				<h3>Cooking time</h3>
 				<xsl:choose>
 					<xsl:when test="cook-time &gt;= 60">
 						<p><xsl:value-of select="(floor(cook-time div 60))" />h:<xsl:value-of select="format-number((cook-time mod 60), '00')" /></p>
@@ -121,7 +150,7 @@
 		</div><!-- end .rightcol -->
 	</div>
 </xsl:if>
-	
+
 </xsl:template>
 
 <xsl:template match="courses/entry">

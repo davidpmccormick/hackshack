@@ -55,7 +55,7 @@ label {
 
 .mainbuttons a {
 	color: #114850;
-	
+
 }
 
 .titleblock {
@@ -246,10 +246,35 @@ a:hover {
   color: #fbec5d;
   text-decoration: none;
 }
+.nav-tabs>li>a:hover {
+  border-color: transparent;
+  background-color: #114850;
+}
 .active,
 li.active a {
   color: #fbec5d;
   text-shadow: 0 0 5px rgba(255, 255, 255, 0.5);
+}
+.active.tab-pane {
+  color: inherit;
+}
+.nav-tabs {
+
+  border-bottom: 1px solid #0b3c45;
+}
+.nav-tabs>li>a, .nav-tabs>li>a>h2 {
+  text-shadow: none!important;
+  margin: 10px 1px 0 0;
+  padding-top: 0;
+  padding-bottom: 5px;
+  border-radius: 10px 10px 0 0;
+}
+.nav-tabs>.active>a, .nav-tabs>.active>a:hover {
+  color: #555;
+  cursor: default;
+  background-color: #0b3c45;
+  border: 1px solid transparent;
+  border-bottom-color: transparent;
 }
 ul.liststylenone {
   list-style: none;
@@ -498,18 +523,18 @@ a:hover .highlightbox {
 		width:15px;
 		left: -17px;
 	}
-	
+
   html {
     font-family: "bigtablet";
   }
   body:after {
     content: "bigtablet";
   }
-  
+
   .mainbuttons h2 {
 	  font-size:24px;
   }
-  
+
   .padded {
     padding-top: 3px;
   }

@@ -16,15 +16,15 @@
 	<html lang="en">
 		<head>
 			<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
-			
+
 			<meta charset="utf-8" />
 			<meta name="title" content="{$page-title}" />
 			<meta name="description" content="" />
 			<meta name="tags" content="" />
 			<title><xsl:call-template name="page-title"/></title>
-			
+
 			<link rel="apple-touch-icon-precomposed" href="{$workspace}/assets/images/iphone-icon.png" />
-			
+
 			<link rel="shortcut icon" href="/favicon.ico" />
 			<link rel="icon" type="images/png" href="{$workspace}/assets/images/favicon.png" />
 			<link rel="stylesheet" media="screen" href="{$workspace}/css/hsa.css" />
@@ -33,12 +33,13 @@
 			<script type="text/javascript">try{Typekit.load();}catch(e){}</script>
 
 			<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js"></script>
+			<script src="{$workspace}/js/bootstrap-tab.js"></script>
 			<script src="{$workspace}/js/master-ck.js"></script>
-			
+
 			<xsl:comment><![CDATA[[if lt IE 9]><script type="text/javascript" src="]]><xsl:value-of select="$root"/><![CDATA[/workspace/js/html5shiv.min.js"></script><![endif]]]></xsl:comment>
 			<xsl:comment><![CDATA[[if (gte IE 6)&(lte IE 8)]><script type="text/javascript" src="]]><xsl:value-of select="$root"/><![CDATA[/workspace/js/selectivizr.min.js"></script><![endif]]]></xsl:comment>
 		</head>
-		
+
 		<body id="{$current-page}-page">
 			<div class="container">
 				<header class="header">
@@ -75,13 +76,13 @@
 				<div id="content" class="clearfix">
 					<xsl:apply-templates/>
 				</div>
-				
+
 				<xsl:if test="/data/events/login-info/@logged-in='true'">
 					<a href="{$root}/add"><div class="addbutton">add</div></a>
 				</xsl:if>
-				
+
 				<a href="{$root}/search"><div class="searchbutton">search</div></a>
-				
+
 				<xsl:if test="$current-page-id != 1">
 					<footer>
 						<xsl:attribute name="class">
