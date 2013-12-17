@@ -33,7 +33,6 @@
 			<script type="text/javascript">try{Typekit.load();}catch(e){}</script>
 
 			<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js"></script>
-			<script src="{$workspace}/js/bootstrap-tab.js"></script>
 			<script src="{$workspace}/js/master-ck.js"></script>
 
 			<xsl:comment><![CDATA[[if lt IE 9]><script type="text/javascript" src="]]><xsl:value-of select="$root"/><![CDATA[/workspace/js/html5shiv.min.js"></script><![endif]]]></xsl:comment>
