@@ -40,7 +40,7 @@ a:hover{color:#fbec5d;text-decoration:none}
 .active.tab-pane{color:inherit}
 .nav-tabs{border-bottom:1px solid #0b3c45}
 .nav-tabs>li>a,.nav-tabs>li>a>h2{text-shadow:none !important;margin:10px 1px 0 0;padding-top:0;padding-bottom:5px;border-radius:10px 10px 0 0}
-.nav-tabs>.active>a,.nav-tabs>.active>a:hover{color:#555;cursor:default;background-color:#0b3c45;border:1px solid transparent;border-bottom-color:transparent}
+.nav-tabs>.active>a,.nav-tabs>.active>a:hover{color:#ff0;cursor:default;background-color:#0b3c45;border:1px solid transparent;border-bottom-color:transparent}
 ul.liststylenone{list-style:none;margin:0;padding:0}
 ul.horizontal li{float:left;margin-right:10px;font-weight:900}
 ul.horizontal li.taglink{font-size:16px}

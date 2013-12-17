@@ -41,7 +41,7 @@
 	<div class="visible-phone">
 
 		<ul class="nav nav-tabs">
-		  <li><a href="#ingredients" data-toggle="tab"><h2>Ingredients</h2></a></li>
+		  <li class="active"><a href="#ingredients" data-toggle="tab"><h2>Ingredients</h2></a></li>
 		  <li><a href="#method" data-toggle="tab"><h2>Method</h2></a></li>
 		</ul>
 		<div class="tab-content">
