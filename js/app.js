@@ -15,6 +15,20 @@ App.CourseRoute = Em.Route.extend({
 	}
 });
 
+App.TogView = Em.View.extend({
+	tagName: 'a',
+	attributeBindings: ['href'],
+	href: '#',
+	classNames: ['toggleview'],
+	click: function(event) {
+		$(event.target).toggleClass('active');
+		var sortBy = this.get('sortBy');
+		event.preventDefault();
+		this.get('controller').set('sortProperties', [sortBy]);
+		this.get('controller').toggleProperty('sortAscending');
+	}
+});
+
 App.CourseController = Em.ArrayController.extend({
 	searchValue: '',
 	filterRecipes: function() {
@@ -25,13 +39,7 @@ App.CourseController = Em.ArrayController.extend({
 		this.set('content', filteredItems);
 	}.observes('searchValue'),
 	sortProperties: ['title'],
-  sortAscending: true,
-  actions: {
-		toggleSort: function(sortBy) {
-			this.set('sortProperties', [sortBy]);
-			this.toggleProperty('sortAscending');
-		}
-	}
+  sortAscending: true
 });
 
 App.ViewRoute = Em.Route.extend({
