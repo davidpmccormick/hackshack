@@ -46,7 +46,6 @@ ul.horizontal li{float:left;margin-right:10px;font-weight:900}
 ul.horizontal li.taglink{font-size:16px}
 ul.ingredientslist li{padding:5px 0;border-bottom:1px dashed #eee}
 .cyclewrapper{width:460px;height:310px;background:#eee}
-.maincontent{display:none}
 .mainimagebox{border:5px solid #eee;box-shadow:0 0 20px rgba(255,255,255,0.5);-webkit-border-radius:3px;-moz-border-radius:3px;border-radius:3px}
 .thumbimagebox{border:5px solid #eee;box-shadow:0 0 20px rgba(255,255,255,0.5);-webkit-border-radius:3px;-moz-border-radius:3px;border-radius:3px;overflow:hidden}
 .highlightbox{position:absolute;top:-100%;left:0;font-size:13px;line-height:16px;background:rgba(24,69,73,0.5);-ms-filter:"progid:DXImageTransform.Microsoft.Alpha(Opacity=50)";filter:alpha(opacity=50);height:100%;width:100%}
