@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>HSA</title>
+<link rel="stylesheet" href="workspace/css/hsa.css" />
+</head>
+<body>
+
+  <script type="text/x-handlebars">
+  <div class="container">
+    {{outlet}}
+  </div>
+  </script>
+
+
+  <script type="text/x-handlebars" data-template-name="index">
+    <div class="row mainbuttons">
+      <div class="span2 offset1">
+        {{#linkTo 'course' 'starter'}}<h2>STARTER</h2>{{/linkTo}}
+      </div>
+      <div class="span2">
+        {{#linkTo 'course' 'main'}}<h2>MAIN</h2>{{/linkTo}}
+      </div>
+      <div class="span2">
+        {{#linkTo 'course' 'dessert'}}<h2>DESSERT</h2>{{/linkTo}}
+      </div>
+      <div class="span2">
+        {{#linkTo 'course' 'side'}}<h2>SIDE</h2>{{/linkTo}}
+      </div>
+      <div class="span2">
+        {{#linkTo 'course' 'baking'}}<h2>BAKING</h2>{{/linkTo}}
+      </div>
+    </div>
+  </script>
+
+  <script type="text/x-handlebars" data-template-name="course">
+    {{input placeholder="search" value=searchValue}}
+    <a href="#" {{action toggleSort 'title'}}>title</a>
+    <a href="#" {{action toggleSort 'serves'}}>serves</a>
+    <div class="row">
+      {{#each}}
+      <div class="span3">
+        {{#linkTo 'view' this.urltitle}}
+          <div class="recipeouter relative">
+            <div class="thumbimagebox relative">
+              <div class="titleblock">
+                <h2>{{title}}</h2>
+              </div>
+              <img {{bind-attr src=thumbnail-image}} />
+            </div>
+          </div>
+        {{/linkTo}}
+      </div>
+      {{/each}}
+    </div>
+  </script>
+
+  <script type="text/x-handlebars" data-template-name="view">
+    <div class="row">
+      <div class="span3">
+        <h2>Ingredients</h2>
+        <ul class="liststylenone ingredientslist">
+          {{#each ingredients}}
+          <li>{{quantity}} {{ingredient}}</li>
+          {{/each}}
+        </ul>
+      </div>
+
+      <div class="span6">
+        <h2>{{title}}</h2>
+        {{#if main-images.length}}
+        <div class="cyclewrapper clearfix">
+          <div class="cyclethis">
+            {{#each main-images}}
+              {{!-- ignore the fake element --}}
+              {{#if real}}
+              <img {{bind-attr src=image}} width="100%" height="auto" />
+              {{/if}}
+            {{/each}}
+          </div>
+        </div>
+        {{/if}}
+        <h2>Method</h2>
+        {{method}}
+      </div>
+
+      <div class="span3">
+        <div class="rightcol clearfix">
+        <h3>Serves</h3>
+        <p>{{serves}}</p>
+        <h3>Preparation time</h3>
+        <p>{{prep-time}} minutes</p>
+        <h3>Cooking time</h3>
+        <p>{{cook-time}} minutes</p>
+      </div>
+    </div>
+  </script>
+
+  <script src="workspace/js/libs/jquery-1.10.2.js"></script>
+  <script src="workspace/js/libs/handlebars-1.1.2.js"></script>
+  <script src="workspace/js/libs/ember-1.2.0.js"></script>
+  <script src="workspace/js/app.js"></script>
+</body>
+</html>
