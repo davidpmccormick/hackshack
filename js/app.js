@@ -21,11 +21,16 @@ App.TogView = Em.View.extend({
 	href: '#',
 	classNames: ['toggleview'],
 	click: function(event) {
-		$(event.target).toggleClass('active');
-		var sortBy = this.get('sortBy');
 		event.preventDefault();
-		this.get('controller').set('sortProperties', [sortBy]);
-		this.get('controller').toggleProperty('sortAscending');
+		var that = this;
+		$('#thumbnails').stop().fadeTo(200, 0, function() {
+			$(event.target).toggleClass('active');
+			var sortBy = that.get('sortBy');
+
+			that.get('controller').set('sortProperties', [sortBy]);
+			that.get('controller').toggleProperty('sortAscending');
+			$('#thumbnails').stop().fadeTo(300, 1);
+		});
 	}
 });
 

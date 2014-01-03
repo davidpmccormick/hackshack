@@ -29,6 +29,7 @@
 		<serves><xsl:value-of select="serves" /></serves>
 		<prep-time><xsl:value-of select="prep-time" /></prep-time>
 		<cook-time><xsl:value-of select="cook-time" /></cook-time>
+		<total-time><xsl:value-of select="number(cook-time)+number(prep-time)" /></total-time>
 		<thumbnail-image><xsl:text>image/2/300/200/5/assets/images/</xsl:text><xsl:value-of select="thumbnail-image" /></thumbnail-image>
 		<main-images>
 			<xsl:apply-templates select="main-images" />
